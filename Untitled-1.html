@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page Andiko</title>
+
+  <!-- 🔗 Mengambil font dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon sosial -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #ffffff, #f0f4f8);
+    }
+
+    .hero img {
+      width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-text {
+      max-width: 500px;
+      margin: 20px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #9fb5ea;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #4b5563;
+    }
+
+    .cta {
+      margin-top: 30px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background-color: #1d4ed8;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #2563eb;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+      background-color: #6960bb88;
+    }
+
+    .card {
+      background: rgb(48, 24, 231);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      color: #ffffff
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 .highlight {
+      color: #00ffc8;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #d4d4d4;
+      font-size: 1rem;
+    }
+
+    .contact {
+      padding: 60px 20px;
+      background-color: #f9fafb;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .contact p {
+      color: #475569;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .contact label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #4677b2;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #f8fafc;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      outline: none;
+      border-color: #4c7db9;
+      background-color: #ffffff;
+    }
+
+    .contact button {
+      background-color: #1d4ed8;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact button:hover {
+      background-color: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: #1a1d22;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #cbd5e1;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #60a5fa;
+    }
+
+    /* 🌈 Animasi saat masuk */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 📱 Responsive untuk HP */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔰 HEADER -->
+  <header>
+    <h1>Selamat Datang di Web Andiko</h1>
+    <p>Website latihan dengan HTML + CSS</p>
+  </header>
+
+  <!-- 🌟 HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Halo! Aku Andiko 👋</h1>
+      <p>Ini adalah halaman landing page buatanku, belajar web development 💻</p>
+    </div>
+    <img src="Andiko.JPEG" alt="Foto Andiko" />
+  </section>
+
+  <!-- 🧩 FITUR SECTION -->
+  <section class="features">
+    <div class="card">
+      <h3>🌐 Website</h3>
+      <p>Proyek halaman web</p>
+    </div>
+    <div class="card">
+      <h3>🎨 Desain UI</h3>
+      <p>desain estetik</p>
+    </div>
+    <div class="card">
+      <h3>💡logika</h3>
+      <p>Persiapan belajar JavaScript & interaksi Pengguna</p>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <h2>Hubungi Saya 📬</h2>
+    <p>Silakan isi form berikut jika ingin menghubungi saya atau memberikan masukan</p>
+    <form>
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" placeholder="Nama kamu..." required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email aktif..." required>
+
+      <label for="pesan">Pesan</label>
+      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan kamu di sini..." required></textarea>
+
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <!-- 🔚 FOOTER -->
+  <footer>
+    &copy; 2025 Andiko | Dibuat dengan ❤️ menggunakan HTML + CSS
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+</footer>
+
+</body>
+</html>
